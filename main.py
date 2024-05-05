@@ -6,6 +6,7 @@ from colorama import Fore
 
 client_id = '' #Paste your Client ID here
 client_secret = '' #Paste your Client Secret here
+output = '' #Enter your preferred output path here
 redirect_uri = 'http://localhost:8888/callback'
 playlist_uri = f'spotify:playlist:{input("Playlist URI: ")}'
 
@@ -44,7 +45,7 @@ def download_playlist(playlist_uri):
                 artists = ', '.join([artist['name'] for artist in track['artists']])
                 print(Fore.GREEN + f"STARTING SEARCH | Song: {track_name}")
                 search_query = f"{track_name} {artists}"
-                output_directory = os.path.join("", playlist_name) #Enter your preferred output path here
+                output_directory = os.path.join(output, playlist_name) 
                 output_filename = f"{track_name} - {artists}.mp3"
                 output_path = os.path.join(output_directory, output_filename)
                 if not os.path.exists(output_path):
