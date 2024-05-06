@@ -58,9 +58,14 @@ Use at your own risk. I take no responsibility for misuse or violation of terms.
 
 ## Notes
 
-As this script relies on the YouTube Search, the output may be different from your desired sing and the quality may vary.
+As this script relies on the YouTube Search, the output may be different from what you expected and the quality may vary.
 
 ## Backstory
 
 Why did I make this?
-As a longtime Spotify user, I wanted to download my music without paying a premium. Existing solutions often required payment or lacked bulk conversion options. So, I decided to create this tool.
+
+I was sick of only being able to listen to music while connected to the internet and not being able to skip freely, aka all the problems Spotify Premium would fix. But paying over 100€ a year just for that? Nah. So I did what every programmer does best and spent hours coding a solution for a problem that could just be fixed by paying 10 bucks a month. (Actually, It didn't even take me that long and 10€ a month is a lot, so I benefit in every way xD)
+
+How do I use the project?
+
+Back then, I mainly used it to listen to music freely on the go, but now I actually rather use it to get my Spotify Playlists into rekordbox
