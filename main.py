@@ -3,11 +3,22 @@ from spotipy.oauth2 import SpotifyOAuth
 import os
 import yt_dlp
 from colorama import Fore
+import json
 
-# Preset variables
-client_id = '' #Paste your Client ID here
-client_secret = '' #Paste your Client Secret here
-output = '' #Enter your preferred output path here
+
+# Open the json file
+with open('config.json') as config_file:
+    try:
+        config = json.load(config_file)
+        print("Config loaded successfully:")
+        print(config)
+    except json.JSONDecodeError as e:
+        print("Error loading config.json:", e)
+
+# Load the preset variales from the json file
+client_id = config['spotipy']['client_id']
+client_secret = config['spotipy']['client_secret']
+output = config['settings']['path']
 redirect_uri = 'http://localhost:8888/callback'
 playlist_uri = f'spotify:playlist:{input("Playlist URI: ")}'
 

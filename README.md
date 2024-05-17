@@ -11,11 +11,11 @@ This tool utilizes the Spotify API to fetch playlist tracks and yt_dlp library t
 1. Head over to the [Spotify Developer Dashboard](https://developer.spotify.com/dashboard/applications).
 2. Log in or sign up for a Spotify account.
 3. Create an app and obtain your **Client ID** and **Client Secret**.
-4. Paste them in `main.py` (line 7-8):
+4. Insert them into the `config.json` file:
 
-    ```python
-    client_id = 'YOUR_CLIENT_ID_HERE'
-    client_secret = 'YOUR_CLIENT_SECRET_HERE'
+    ```json
+    "client_id": "YOUR_CLIENT_ID_HERE",
+    "client_secret": "YOUR_CLIENT_SECRET_HERE"
     ```
 
 5. Set the **Redirect URI** to `http://localhost:8888/callback` in your app settings.
@@ -33,8 +33,8 @@ This tool utilizes the Spotify API to fetch playlist tracks and yt_dlp library t
 4. Open `main.py`.
 5. Adjust the output directory (line 9):
 
-    ```python
-    output = 'D:/Your/Path/Here'
+    ```json
+    "path": = "D:/Your/Path/Here"
     ```
 
 

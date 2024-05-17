@@ -1,0 +1,9 @@
+{
+    "spotipy": {
+      "client_id": "",
+      "client_secret": ""
+    },
+    "settings": {
+      "path": ""
+    }
+  }
