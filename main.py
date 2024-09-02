@@ -4,6 +4,7 @@ import os
 import yt_dlp
 from colorama import Fore
 import json
+import re
 
 
 # Open the json file
@@ -15,12 +16,19 @@ with open('config.json') as config_file:
     except json.JSONDecodeError as e:
         print("Error loading config.json:", e)
 
+# Function to extract the Playlist ID from the playlist URL
+def extract_playlist_id():
+    url = input("Playlist URL: ")
+    pattern = r"https://open\.spotify\.com/playlist/([a-zA-Z0-9]+)"
+    match = re.search(pattern, url)
+    return f'spotify:playlist:{match.group(1)}' if match else None
+
 # Load the preset variales from the json file
 client_id = config['spotipy']['client_id']
 client_secret = config['spotipy']['client_secret']
 output = config['settings']['path']
 redirect_uri = 'http://localhost:8888/callback'
-playlist_uri = f'spotify:playlist:{input("Playlist URI: ")}'
+playlist_uri = extract_playlist_id()
 
 #Set up the Spotify API client
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=client_id, client_secret=client_secret, redirect_uri=redirect_uri))
